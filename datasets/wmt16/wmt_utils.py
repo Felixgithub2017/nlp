@@ -656,6 +656,14 @@ class WmtConfig(nlp.BuilderConfig):
         self.language_pair = language_pair
         self.subsets = subsets
 
+        # TODO(PVP): remove when manual dir works
+        # +++++++++++++++++++++
+        if language_pair[1] in ["cs", "hi", "ru"]:
+            assert NotImplementedError(
+                "The dataset for {}-en is currently not fully supported.".format(language_pair[1])
+            )
+        # +++++++++++++++++++++
+
 
 class Wmt(ABC, nlp.GeneratorBasedBuilder):
     """WMT translation dataset."""
