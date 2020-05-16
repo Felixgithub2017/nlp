@@ -954,6 +954,7 @@ def _parse_tsv(path, language_pair=None):
         l1, l2 = lang_match.groups()
     else:
         l1, l2 = language_pair
+
     with open(path) as f:
         for j, line in enumerate(f):
             cols = line.split("\t")
