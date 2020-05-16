@@ -881,6 +881,10 @@ def _parse_parallel_sentences(f1, f2):
     f1_files = glob.glob(f1)
     f2_files = glob.glob(f2)
 
+    if not f1_files and not f2_files:
+        import ipdb
+
+        ipdb.set_trace()
     assert f1_files and f2_files, "No matching files found: %s, %s." % (f1, f2)
     assert len(f1_files) == len(f2_files), "Number of files do not match: %d vs %d for %s vs %s." % (
         len(f1_files),
